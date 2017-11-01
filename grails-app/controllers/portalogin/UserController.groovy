@@ -13,8 +13,19 @@ class UserController {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]
       }else{
-        print "Inicia conexion al BO \n"
-        redirect action: "index", method: "GET"
+        def usuario = User.findByNameAndPassword(params.username, params.password)
+        if (usuario) {
+          //session.user = user
+          //flash.message = "->${user.username}"
+          print "Iniciando conexion al BO \n"
+          print "Conexion exitosa \n"
+          print "Redireccionando al ususario\n"
+          redirect(url:"http://www.google.com")
+          print "Usuario redireccionado a home page"
+        }else{
+          render view:'/index'
+          return
+        }
       }
     }
     def index1(Integer max) {
@@ -27,6 +38,8 @@ class UserController {
     }
 
     def create() {
+        String codificado = params.password
+        print codificado
         respond new User(params)
     }
 

@@ -46,6 +46,9 @@
                               <div ng-messages-include="maxlength"></div>
                             </div>
                     </div>
+                    <g:if test="${flash.success}">
+                        <div class="alert alert-success" style="display: block">${flash.success}</div>
+                    </g:if>
                     <center>
                           <button type="submit" class="btn btn-default">Login</button>
                     </center>

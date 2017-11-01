@@ -1,14 +1,12 @@
-/**
- * Métodos utilitarios para obtener datos del idoc, para utilizar en el nodo comprobante
- */
 package portalogin
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import grails.util.*
-import com.sineti.middleware.bill.*
 
 class Encriptador {
+	public static encoding(String texto){
 
-	static encode = { str ->
-	 
- }
+	}
 }
