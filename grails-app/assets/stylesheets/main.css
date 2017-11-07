@@ -42,7 +42,7 @@ body {
 }
 
 #grailsLogo {
-    background-color: #abbf78;
+    background-color: #A9F5F2;
 }
 
 a:hover, a:active {
@@ -68,9 +68,6 @@ img {
 #grailsLogo a {
     display: inline-block;
     margin: 1em;
-}
-
-.content {
 }
 
 .content h1 {
@@ -154,7 +151,7 @@ img {
 }
 
 .nav a.home {
-    background-image: url(../images/skin/house.png);
+    background-image: url(../images/skin/logout.png);
 }
 
 .nav a.list {

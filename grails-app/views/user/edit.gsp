@@ -26,6 +26,10 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
+            <div class="row">
+                  <div class="col-md-3">
+                  </div>
+                  <div class="col-md-7">
             <g:form resource="${this.user}" method="PUT">
                 <g:hiddenField name="version" value="${this.user?.version}" />
                 <fieldset class="form">
@@ -36,5 +40,9 @@
                 </fieldset>
             </g:form>
         </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+</div>
     </body>
 </html>

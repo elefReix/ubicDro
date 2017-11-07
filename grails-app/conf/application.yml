@@ -97,19 +97,25 @@ hibernate:
         region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
 
 
+//dataSource:
+//    pooled: true
+//    jmxExport: true
+//    driverClassName: org.postgresql.Driver
+//    username: postgres
+//    password : root
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.postgresql.Driver
-    username: postgres
-    password : root
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
 
 environments:
     development:
         dataSource:
             dbCreate: update
-            //url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-            url : "jdbc:postgresql://localhost:5432/DEVELOPMENT"
+            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            //url : "jdbc:postgresql://localhost:5432/DEVELOPMENT"
     test:
         dataSource:
             dbCreate: create-drop

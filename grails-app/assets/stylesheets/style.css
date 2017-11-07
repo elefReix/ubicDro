@@ -1,0 +1,18 @@
+# Empty CSS file for your own CSS
+h2{
+color:green;
+}
+p{
+
+color:green;
+}
+
+.my-messages {
+  transition:1s linear all;
+}
+.my-messages.ng-active {
+  "pruba de ng-messages activado"
+}
+.my-messages.ng-inactive {
+  "pruba de ng-messages desactivado"
+}

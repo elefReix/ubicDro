@@ -32,7 +32,7 @@ pre {
     padding-right: 110px;
 }
 .navbar .container {
-    margin: 10px;
+    margin: 3px;
 }
 .navbar-default a {
     color: #ffffff !important;
@@ -41,7 +41,6 @@ pre {
 }
 .grails-icon img {
     width: 40px;
-
 }
 .navbar-default, .navbar-static-top {
     background-color: #4D8618;
