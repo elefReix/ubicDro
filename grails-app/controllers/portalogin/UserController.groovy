@@ -1,5 +1,6 @@
 package portalogin
 
+import portalogin.Utils
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -9,19 +10,17 @@ class UserController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-      if (params.username == "Admin" && params.password == "sineti.1") {
+      String nombre = params.username
+      String pass = params.password
+      if (nombre == "Admin" && pass == "sineti.1") {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]
       }else{
-        def usuario = User.findByNameAndPassword(params.username, params.password)
+        def usuario = User.findByNameAndPassword(nombre,pass)
+        //String destino = Utils.asigna(nombre)
         if (usuario) {
-          //session.user = user
-          //flash.message = "->${user.username}"
           print "Iniciando conexion al BO \n"
-          print "Conexion exitosa \n"
-          print "Redireccionando al ususario\n"
-          redirect(url:"http://www.google.com")
-          print "Usuario redireccionado a home page"
+          redirect(url:Utils.asigna(nombre))
         }else{
           render view:'/index'
           return
@@ -38,8 +37,6 @@ class UserController {
     }
 
     def create() {
-        String codificado = params.password
-        print codificado
         respond new User(params)
     }
 
@@ -56,7 +53,7 @@ class UserController {
             respond user.errors, view:'create'
             return
         }
-
+        print user.password
         user.save flush:true
 
         request.withFormat {
@@ -111,7 +108,7 @@ class UserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect action:"index", method:"GET"
+                redirect action:"index1", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

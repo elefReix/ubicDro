@@ -1,12 +1,11 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="main"/>
+    <meta name="layout" />
     <!-- librerias css -->
+    <asset:stylesheet src="application.css"/>
     <script src="js/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <script type="text/ng-template" id="generic-messages">
 
           <p ng-message="required">Este campo es requerido</p>
@@ -18,6 +17,19 @@
 
 </head>
 <body>
+  <!--***************************************************************************************************************************************-->
+ <div class="row">
+ <div class="col-md-12">
+     <nav class="navbar navbar-default" role="navigation">
+     <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button> <a class="navbar-brand" href="#">Ubictum</a>
+    </div>
+  </nav>
+</div>
+</div>
+<!--***************************************************************************************************************************************-->
     <!-- Formulario Login-->
     <div class="row">
           <div class="col-md-4">
